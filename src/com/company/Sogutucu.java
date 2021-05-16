@@ -1,10 +1,13 @@
 package com.company;
 
-public class Sogutucu
+import java.util.Random;
+
+public class Sogutucu implements IKontrol
 {
     private boolean durum = false;
     String CalismaMod = "Orta"; // ileride program geliştirilmek istendiğinde soğutucunun hızını ayarlamak için
     public float sicaklik_loc=0;
+    private float sicaklik=0;
     public String marka;
     public String model;
     public int hiz_seviye;
@@ -17,6 +20,15 @@ public class Sogutucu
             this.hiz_seviye=builder.hiz_seviye;
             this.mod= builder.mod;
         }
+
+    public void ac()
+    {
+        System.out.println("SOgutucu Açılıyor");
+    }
+    public void kapat()
+    {
+        System.out.println("SOgutucu Kapatılıyorr");
+    }
     public void SogutucuAc(float sicaklik,int secim,int kontrol)
     {
         if (kontrol ==0)
@@ -66,6 +78,7 @@ public class Sogutucu
         }
 
     }
+
     public static class Builder {
 
         private String marka;

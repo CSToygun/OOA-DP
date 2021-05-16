@@ -16,8 +16,11 @@ public class Islem {
 
     public float Sicaklik_Gonder()
     {
+        IKontrol cihaz=new SicaklikAlgilayici();
+        KOntrol buton=new KOntrol(cihaz);
         if (sic_kontrol == 0)
         {
+            buton.ac();
             this.sicaklik = sicaklikalgila.Sicakli_Olc();
             System.out.println("Sicaklik olculuyor, lutfen bekleyin");
             if (sicaklik > 15) {
@@ -31,11 +34,13 @@ public class Islem {
             } else
                 hata.Sicaklik_Hata(0);
             sic_kontrol++;
+            buton.kapat();
             return this.sicaklik;
 
         }
         else
         {
+            buton.ac();
             System.out.println("Sicaklik olculuyor, lutfen bekleyin");
             if (sicaklik > 15) {
                 try {
@@ -47,6 +52,7 @@ public class Islem {
                 System.out.println(sicaklik + "°C");
             } else
                 hata.Sicaklik_Hata(0);
+            buton.kapat();
             return this.sicaklik;
         }
     }
