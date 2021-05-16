@@ -1,5 +1,6 @@
 package com.company;
 
+/**** The Dependency Inversion Principle (DIP) ilkesi için hazırlandı  ****/
 public class KOntrol
 {
         private IKontrol cihaz;
@@ -15,3 +16,5 @@ public class KOntrol
             cihaz.kapat();
         }
 }
+
+/**  Böyleci %100 bağlılık bağı azaltılmış noldu ve hehangi bir değişiklikte etkilenmenin önüne geçilmiş oluyor  **/

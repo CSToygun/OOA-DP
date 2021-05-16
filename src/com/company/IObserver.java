@@ -2,5 +2,5 @@ package com.company;
 
 public interface IObserver
 {
-    public void update(String msj);
+    public void update(float sicak);
 }

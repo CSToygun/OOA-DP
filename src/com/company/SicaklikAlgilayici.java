@@ -16,10 +16,22 @@ public class SicaklikAlgilayici implements ISicaklikAlgilayici,IKontrol
         System.out.println("Sıcaklık Algılayıcı Kapatılıyorr");
     }
 
+    ISubject publisher;
+
+    public SicaklikAlgilayici(ISubject publisher)
+    {
+        this.publisher = publisher;
+    }
+
+
     public float Sicakli_Olc()
     {
         Random rastgele=new Random();
         sicaklik=rastgele.nextInt(51);
         return this.sicaklik;
+    }
+    public void setSicaklik(float sicaklik) {
+        this.sicaklik = sicaklik;
+        publisher.notify(sicaklik);
     }
 }
